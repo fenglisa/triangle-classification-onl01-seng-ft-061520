@@ -11,7 +11,7 @@ class Triangle
   
   def kind
     if @sides.max >= (@sides.min(2)[0] + @sides.min(2)[1]) || @sides.any?{|side| side <= 0}
-        raise TriangleError
+      raise TriangleError
     else
       if @sides.uniq.length == 1
         return :equilateral
