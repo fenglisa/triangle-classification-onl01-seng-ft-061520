@@ -10,7 +10,7 @@ class Triangle
   end
   
   def kind
-    if @sides.max >= (@sides.min(2)[0] + @sides.min(2)[1]) || @sides.any?{|side| side <= 0}
+    if @sides.max >= (@sides.min(2)[0] + @sides.min(2)[1]) || @sides.any?{|s| s <= 0}
       raise TriangleError
     else
       if @sides.uniq.length == 1
