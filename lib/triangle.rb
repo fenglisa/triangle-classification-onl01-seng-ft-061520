@@ -1,4 +1,3 @@
-require "pry"
 class Triangle
   attr_accessor :side_1, :side_2, :side_3, :sides
   
@@ -16,7 +15,7 @@ class Triangle
         return :equilateral
       elsif @sides.uniq.length == 2
         return :isosceles
-      elsif @sides.uniq.length == 3
+      else
         return :scalene
       end
     else
@@ -25,6 +24,5 @@ class Triangle
   end
   
   class TriangleError < StandardError
-    # triangle error code
   end
 end
