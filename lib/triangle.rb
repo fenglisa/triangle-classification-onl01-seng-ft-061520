@@ -11,7 +11,7 @@ class Triangle
   end
   
   def kind
-    if @sides.max < (@sides.min(2)[0] + @sides.min(2)[1]) && 
+    if @sides.max < (@sides.min(2)[0] + @sides.min(2)[1]) && @sides.all?{|side| side != 0}
       if @sides.uniq.length == 1
         return :equilateral
       elsif @sides.uniq.length == 2
@@ -19,6 +19,9 @@ class Triangle
       elsif @sides.uniq.length == 3
         return :scalene
       end
+    else
+      raise TriangleError
+    end
   end
   
   class TriangleError < StandardError
