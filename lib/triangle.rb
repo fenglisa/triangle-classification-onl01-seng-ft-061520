@@ -14,7 +14,7 @@ class Triangle
       begin
         raise TriangleError
       rescue TriangleError => error
-          puts error.alert
+        puts error.alert
       end
     else
       if @sides.uniq.length == 1
