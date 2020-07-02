@@ -14,9 +14,7 @@ class Triangle
     :equilateral if @sides.uniq.length == 1
     :isosceles if @sides.uniq.length == 2
     :scalene if @sides.uniq.length == 3
-    
-    binding.pry
-    puts "bye"
+
   end
   
   class TriangleError < StandardError
