@@ -11,7 +11,7 @@ class Triangle
   end
   
   def kind
-    if 
+    if @sides.max < (@sides.min(2)[0] + @sides.min(2)[1]) && 
       if @sides.uniq.length == 1
         return :equilateral
       elsif @sides.uniq.length == 2
