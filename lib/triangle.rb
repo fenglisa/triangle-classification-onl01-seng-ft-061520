@@ -10,7 +10,13 @@ class Triangle
   end
   
   def kind
-    if @sides.max < (@sides.min(2)[0] + @sides.min(2)[1]) && @sides.all?{|side| side != 0}
+    if @sides.max >= (@sides.min(2)[0] + @sides.min(2)[1]) && @sides.any?{|side| side == 0}
+      begin
+        raise TriangleError
+      rescue TriangleError => error
+          puts error.alert
+      end
+    else
       if @sides.uniq.length == 1
         return :equilateral
       elsif @sides.uniq.length == 2
@@ -18,12 +24,12 @@ class Triangle
       else
         return :scalene
       end
-    else
-      raise TriangleError
     end
   end
   
   class TriangleError < StandardError
-    
+    def alert
+      puts "You are not a triangle!"
+    end
   end
 end
