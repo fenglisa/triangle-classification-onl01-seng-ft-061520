@@ -11,10 +11,9 @@ class Triangle
   end
   
   def kind
-    :equilateral if @sides.uniq.length == 1
-    :isosceles if @sides.uniq.length == 2
-    :scalene if @sides.uniq.length == 3
-
+    return :equilateral if @sides.uniq.length == 1
+    return :isosceles if @sides.uniq.length == 2
+    return :scalene if @sides.uniq.length == 3
   end
   
   class TriangleError < StandardError
