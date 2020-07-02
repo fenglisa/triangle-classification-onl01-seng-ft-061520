@@ -1,12 +1,12 @@
 class Triangle
   attr_accessor :side_1, :side_2, :side_3
   
-  def initialize(attributes)
-    sides = []
-    attributes.each {|key, value| 
-      self.send(("#{key}="), value)
-      sides << value
-    }
+  def initialize(side_1, side_2, side_3)
+    @side_1 = side_1
+    @side_2 = side_2
+    @side_3 = side_3
+    @sides = []
+    
   end
   
   def kind
